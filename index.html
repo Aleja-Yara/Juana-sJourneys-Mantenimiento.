@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="El blog de viajes con los mejores destinos, tutoriales y noticias. Descubre el mundo con estilo.">
+    <meta name="keywords" content="viajes, turismo, destinos, blog de viajes, aventura">
+    <title>Juana's Journeys | Blog de Viajes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">Juana's <span>Journeys</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#destinos">Destinos</a></li>
+                <li><a href="#tutoriales">Tutoriales</a></li>
+                <li><a href="#noticias">Noticias</a></li>
+            </ul>
+        </nav>
+        <div class="nav-controls">
+            <button id="theme-toggle" aria-label="Cambiar a modo oscuro">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="hero-content fade-in">
+                <h1>Descubre el Mundo con Estilo</h1>
+                <p>Acompáñanos en nuestras aventuras. Encuentra los mejores tutoriales de viaje, destinos increíbles y
+                    las últimas noticias del mundo del turismo.</p>
+                <a href="#destinos" class="btn-primary">Explorar Destinos</a>
+            </div>
+        </section>
+
+        <!-- Filtros de Categorías -->
+        <section class="categories container">
+            <h2 class="section-title text-center">Explora por Categoría</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="destinos">Destinos</button>
+                <button class="filter-btn" data-filter="tutoriales">Tutoriales</button>
+                <button class="filter-btn" data-filter="noticias">Noticias</button>
+                <button class="filter-btn" data-filter="gastronomia">Gastronomía</button>
+                <button class="filter-btn" data-filter="consejos">Consejos</button>
+                <button class="filter-btn" data-filter="fotografia">Fotografía</button>
+            </div>
+        </section>
+
+        <!-- Artículos -->
+        <section id="destinos" class="articles container">
+            <div class="grid">
+                <!-- Artículo 1 -->
+                <article class="card" data-category="destinos">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/beach.png" alt="Playa Paraíso" loading="lazy">
+                        <span class="category-badge">Destinos</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Las 10 Mejores Playas para Visitar este Verano</h3>
+                        <p>Descubre paraísos ocultos con aguas cristalinas y arena blanca. La guía definitiva para tus
+                            próximas vacaciones.</p>
+                        <div class="card-footer">
+                            <span class="date">15 Mayo, 2026</span>
+                            <a href="playas.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 2 -->
+                <article class="card" data-category="noticias">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/city.png" alt="Calle Europea" loading="lazy">
+                        <span class="category-badge">Noticias</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Nuevas Rutas en Europa: Lo que debes saber</h3>
+                        <p>Las aerolíneas han abierto nuevas rutas económicas. Entérate de cómo aprovechar estos vuelos
+                            para tu próxima escapada.</p>
+                        <div class="card-footer">
+                            <span class="date">10 Mayo, 2026</span>
+                            <a href="rutas.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 3 -->
+                <article class="card" data-category="tutoriales">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/Viajero.jpg" alt="Café acogedor" loading="lazy">
+                        <span class="category-badge">Tutoriales</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Cómo Viajar Barato: Guía Paso a Paso</h3>
+                        <p>Aprende a presupuestar, encontrar vuelos baratos y comer increíble sin gastar una fortuna. Mi
+                            método personal revelado.</p>
+                        <div class="card-footer">
+                            <span class="date">5 Mayo, 2026</span>
+                            <a href="viajar-barato.html" class="read-more">Leer más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 4 -->
+                <article class="card" data-category="gastronomia">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/cafe.png" alt="Comida callejera" loading="lazy">
+                        <span class="category-badge">Gastronomía</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>La Mejor Comida Callejera en Asia</h3>
+                        <p>Un recorrido gastronómico por los mejores puestos de comida en Tailandia, Japón y Vietnam.
+                            Sabores que no olvidarás.</p>
+                        <div class="card-footer">
+                            <span class="date">1 Mayo, 2026</span>
+                            <a href="comida.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 5 -->
+                <article class="card" data-category="fotografia">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/FotoViaje.jpg" alt="Cámara fotográfica" loading="lazy">
+                        <span class="category-badge">Fotografía</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Consejos para Fotos de Viaje Increíbles</h3>
+                        <p>Aprende a capturar la esencia de tus destinos con tu smartphone o cámara profesional usando
+                            reglas de composición.</p>
+                        <div class="card-footer">
+                            <span class="date">28 Abril, 2026</span>
+                            <a href="fotos.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 6 -->
+                <article class="card" data-category="consejos">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/maletaSolo.jpg" alt="Equipaje ligero" loading="lazy">
+                        <span class="category-badge">Consejos</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>El Arte de Viajar Solo con Equipaje de Mano</h3>
+                        <p>Descubre cómo empacar de manera eficiente para viajes largos sin pagar extra por maletas
+                            facturadas.</p>
+                        <div class="card-footer">
+                            <span class="date">20 Abril, 2026</span>
+                            <a href="equipaje.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 7 -->
+                <article class="card" data-category="destinos">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/mountain.png" alt="Montañas" loading="lazy">
+                        <span class="category-badge">Destinos</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Explorando Montañas Majestuosas</h3>
+                        <p>Descubre los picos más increíbles para tu próxima aventura de senderismo.</p>
+                        <div class="card-footer">
+                            <span class="date">25 Mayo, 2026</span>
+                            <a href="montanas.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 8 -->
+                <article class="card" data-category="gastronomia">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/market.png" alt="Mercado" loading="lazy">
+                        <span class="category-badge">Gastronomía</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Mercados Locales Que Debes Probar</h3>
+                        <p>Los mercados son el corazón cultural de cualquier ciudad y la mejor forma de comer bien y
+                            barato.</p>
+                        <div class="card-footer">
+                            <span class="date">22 Mayo, 2026</span>
+                            <a href="mercados.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 9 -->
+                <article class="card" data-category="tutoriales">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/aprenderidiomas.jpg" alt="Café y estudio" loading="lazy">
+                        <span class="category-badge">Tutoriales</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Guía Para Aprender Idiomas Rápido</h3>
+                        <p>Conecta mejor con los locales aprendiendo frases clave antes de tu viaje.</p>
+                        <div class="card-footer">
+                            <span class="date">18 Mayo, 2026</span>
+                            <a href="idiomas.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container text-center fade-in">
+                <h2>Únete a nuestra comunidad</h2>
+                <p>Recibe los mejores consejos, noticias y ofertas de viaje directamente en tu correo.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="btn-primary">Suscribirse</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h2>Juana's <span>Journeys</span></h2>
+                <p>Compartiendo la pasión por viajar, conocer nuevas culturas y vivir experiencias inolvidables
+                    alrededor del mundo.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#destinos">Destinos</a></li>
+                    <li><a href="#tutoriales">Tutoriales</a></li>
+                    <li><a href="#noticias">Noticias</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Juana's Journeys. Todos los derechos reservados. | Creado con amor y mucho café ☕</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

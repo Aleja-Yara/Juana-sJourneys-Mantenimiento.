@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevas Rutas en Europa | Juana's Journeys</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .single-article {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .single-article img {
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .single-article h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .single-article .meta {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .single-article p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .logo a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar scrolled">
+        <div class="logo"><a href="index.html">Juana's <span>Journeys</span></a></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+            </ul>
+        </nav>
+        <div class="nav-controls">
+            <button id="theme-toggle" aria-label="Cambiar a modo oscuro">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <article class="single-article container fade-in">
+            <h1>Nuevas Rutas en Europa: Lo que debes saber</h1>
+            <div class="meta">
+                <span><i class="far fa-calendar"></i> 10 Mayo, 2026</span>
+                <span><i class="far fa-folder"></i> Noticias</span>
+            </div>
+            <img src="assets/images/city.png" alt="Calle Europea">
+            <p>Las aerolíneas han abierto nuevas rutas económicas. Entérate de cómo aprovechar estos vuelos para tu
+                próxima escapada.</p>
+            <p>El mercado de la aviación europea ha visto una expansión sin precedentes esta primavera. Varias
+                aerolíneas de bajo coste han anunciado la apertura de más de 50 nuevas rutas que conectan ciudades
+                secundarias en todo el continente.</p>
+            <p>Esto significa que destinos que antes requerían escalas largas y costosas ahora son accesibles con vuelos
+                directos. Por ejemplo, la nueva conexión entre Sevilla y Dubrovnik promete ser un éxito este verano.</p>
+            <p>Para aprovechar estas ofertas, recomendamos activar alertas de precios y ser flexibles con las fechas de
+                viaje. ¡Tu aventura europea te espera a solo un clic de distancia!</p>
+            <a href="index.html" class="btn-primary" style="margin-top: 2rem;">&larr; Volver al inicio</a>
+        </article>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
