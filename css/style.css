@@ -639,3 +639,8 @@ footer {
     outline: 3px solid #333333;
     outline-offset: 3px;
 }
+
+/* Los artículos ocultos por los filtros no deben mostrarse */
+.card[hidden] {
+    display: none !important;
+}
