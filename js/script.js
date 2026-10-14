@@ -1,74 +1,70 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-    /* =========================================
-       Dark Mode Toggle Logic
-       ========================================= */
+    // =========================================
+    // MODO OSCURO
+    // =========================================
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = themeToggleBtn.querySelector('i');
-    
-    // Check local storage for theme preference
+    const themeIcon = themeToggleBtn?.querySelector('i');
+
     const currentTheme = localStorage.getItem('theme');
-    
+
     if (currentTheme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'dark');
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        themeIcon?.classList.replace('fa-moon', 'fa-sun');
     }
-    
-    themeToggleBtn.addEventListener('click', () => {
-        let theme = document.documentElement.getAttribute('data-theme');
-        
-        if (theme === 'dark') {
+
+    themeToggleBtn?.addEventListener('click', () => {
+        const isDark =
+            document.documentElement.getAttribute('data-theme') === 'dark';
+
+        if (isDark) {
             document.documentElement.removeAttribute('data-theme');
             localStorage.setItem('theme', 'light');
-            themeIcon.classList.replace('fa-sun', 'fa-moon');
+            themeIcon?.classList.replace('fa-sun', 'fa-moon');
+            themeToggleBtn.setAttribute('aria-label', 'Activar modo oscuro');
         } else {
             document.documentElement.setAttribute('data-theme', 'dark');
             localStorage.setItem('theme', 'dark');
-            themeIcon.classList.replace('fa-moon', 'fa-sun');
+            themeIcon?.classList.replace('fa-moon', 'fa-sun');
+            themeToggleBtn.setAttribute('aria-label', 'Activar modo claro');
         }
     });
 
-    /* =========================================
-       Navbar Scroll Effect
-       ========================================= */
+    // =========================================
+    // EFECTO DE LA BARRA DE NAVEGACIÓN
+    // =========================================
     const navbar = document.querySelector('.navbar');
-    
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+        navbar?.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    /* =========================================
-       Scroll Animations (Intersection Observer)
-       ========================================= */
+    // =========================================
+    // ANIMACIONES AL DESPLAZARSE
+    // =========================================
     const faders = document.querySelectorAll('.fade-in');
-    
-    const appearOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
-    };
-    
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add('appear');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, appearOptions);
-    
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
-    });
 
-  
-    /* =========================================
-       Búsqueda y filtros de artículos
-       ========================================= */
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        faders.forEach(element => observer.observe(element));
+    } else {
+        faders.forEach(element => element.classList.add('appear'));
+    }
+
+    // =========================================
+    // BUSCADOR Y FILTROS COMBINADOS
+    // =========================================
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.card');
     const searchInput = document.getElementById('search-input');
@@ -77,36 +73,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let activeCategory = 'all';
 
-    function normalizeText(text) {
-        return text
-            .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '')
-            .toLowerCase()
-            .trim();
-    }
-
     function filterArticles() {
-        const query = normalizeText(searchInput ? searchInput.value : '');
+        const searchTerm = (searchInput?.value || '')
+            .trim()
+            .toLocaleLowerCase('es');
+
         let visibleCount = 0;
 
         cards.forEach(card => {
-            const category = card.dataset.category || '';
             const title = card.querySelector('h3')?.textContent || '';
-            const description =
-                card.querySelector('.card-content p')?.textContent || '';
+            const description = card.querySelector('.card-content p')?.textContent || '';
+            const category = card.getAttribute('data-category') || '';
+
+            const matchesSearch = `${title} ${description} ${category}`
+                .toLocaleLowerCase('es')
+                .includes(searchTerm);
 
             const matchesCategory =
                 activeCategory === 'all' || category === activeCategory;
 
-            const text = normalizeText(`${title} ${description} ${category}`);
-            const matchesSearch = text.includes(query);
-            const isVisible = matchesCategory && matchesSearch;
+            const isVisible = matchesSearch && matchesCategory;
 
-            card.style.display = isVisible ? 'flex' : 'none';
+            card.hidden = !isVisible;
 
             if (isVisible) {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
                 visibleCount++;
             }
         });
@@ -123,19 +113,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            activeCategory = btn.dataset.filter || 'all';
-
             filterBtns.forEach(button => {
-                const active = button === btn;
-                button.classList.toggle('active', active);
-                button.setAttribute('aria-pressed', String(active));
+                button.classList.remove('active');
+                button.removeAttribute('aria-pressed');
             });
+
+            btn.classList.add('active');
+            btn.setAttribute('aria-pressed', 'true');
+
+            activeCategory = btn.getAttribute('data-filter') || 'all';
 
             filterArticles();
         });
+
+        btn.setAttribute(
+            'aria-pressed',
+            btn.classList.contains('active') ? 'true' : 'false'
+        );
     });
 
-    if (searchInput) {
+    searchInput?.addEventListener('input', filterArticles);
+
+    // Mostrar correctamente todos los artículos al entrar
+    filterArticles();
+
+    // =========================================
+    // NEWSLETTER: VALIDACIÓN BÁSICA
+    // =========================================
+    const newsletterForm = document.querySelector('.newsletter-form');
+
+    newsletterForm?.addEventListener('submit', event => {
+        event.preventDefault();
+
+        alert(
+            'El formulario está listo visualmente, pero todavía necesita ' +
+            'un servicio para registrar las suscripciones.'
+        );
+    });
+});
         searchInput.addEventListener('input', filterArticles);
     }
 
