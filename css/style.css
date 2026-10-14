@@ -597,3 +597,45 @@ footer {
         width: 100%;
     }
 }
+
+/* =========================================
+   BOTÓN DE ARTÍCULOS FAVORITOS
+   ========================================= */
+
+.card-img-wrapper {
+    position: relative;
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #FB6F92;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.favorite-btn:hover {
+    transform: scale(1.12);
+}
+
+.favorite-btn.is-favorite {
+    background-color: #FB6F92;
+    color: #ffffff;
+}
+
+.favorite-btn:focus-visible {
+    outline: 3px solid #333333;
+    outline-offset: 3px;
+}
