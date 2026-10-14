@@ -151,8 +151,3 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     });
 });
-        searchInput.addEventListener('input', filterArticles);
-    }
-
-    filterArticles();
-});
