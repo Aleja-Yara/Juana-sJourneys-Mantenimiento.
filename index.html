@@ -57,6 +57,41 @@
                 <button class="filter-btn" data-filter="consejos">Consejos</button>
                 <button class="filter-btn" data-filter="fotografia">Fotografía</button>
             </div>
+            
+        <!-- Filtros de Categorías y Buscador -->
+        <section class="categories container">
+            <h2 class="section-title text-center">Explora por Categoría</h2>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="destinos">Destinos</button>
+                <button class="filter-btn" data-filter="tutoriales">Tutoriales</button>
+                <button class="filter-btn" data-filter="noticias">Noticias</button>
+                <button class="filter-btn" data-filter="gastronomia">Gastronomía</button>
+                <button class="filter-btn" data-filter="consejos">Consejos</button>
+                <button class="filter-btn" data-filter="fotografia">Fotografía</button>
+            </div>
+
+            <!-- Buscador de artículos -->
+            <div class="article-search">
+                <label for="search-input">Buscar artículos</label>
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Ej.: playas, comida, fotografía..."
+                    autocomplete="off"
+                >
+                <p id="results-count" aria-live="polite">
+                    Mostrando todos los artículos
+                </p>
+            </div>
+
+            <!-- Mensaje cuando no hay resultados -->
+            <p id="no-results" role="status" hidden>
+                No encontramos artículos con esos criterios.
+                Prueba otra búsqueda o selecciona otra categoría.
+            </p>
+        </section>
         </section>
 
         <!-- Artículos -->
