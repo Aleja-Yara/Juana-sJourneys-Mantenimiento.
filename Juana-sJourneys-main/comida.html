@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Mejor Comida Callejera en Asia | Juana's Journeys</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .single-article {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .single-article img {
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .single-article h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .single-article .meta {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .single-article p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .logo a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar scrolled">
+        <div class="logo"><a href="index.html">Juana's <span>Journeys</span></a></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+            </ul>
+        </nav>
+        <div class="nav-controls">
+            <button id="theme-toggle" aria-label="Cambiar a modo oscuro">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <article class="single-article container fade-in">
+            <h1>La Mejor Comida Callejera en Asia</h1>
+            <div class="meta">
+                <span><i class="far fa-calendar"></i> 1 Mayo, 2026</span>
+                <span><i class="far fa-folder"></i> Gastronomía</span>
+            </div>
+            <img src="assets/images/cafe.png" alt="Comida callejera">
+            <p>Un recorrido gastronómico por los mejores puestos de comida en Tailandia, Japón y Vietnam. Sabores que no
+                olvidarás.</p>
+            <p>Asia es el paraíso indiscutible para los amantes de la comida callejera. Cada esquina ofrece una
+                explosión de aromas y sabores únicos que cuentan la historia de su cultura.</p>
+            <p>En Bangkok, el Pad Thai cocinado al wok frente a tus ojos es imperdible. Si viajas a Osaka, Japón, el
+                Takoyaki (bolitas de pulpo) caliente y sabroso te dejará con ganas de más. Y en Hanoi, Vietnam, sentarse
+                en bancos de plástico a comer un tazón humeante de Pho es una experiencia casi espiritual.</p>
+            <p>No le temas a los puestos de la calle; simplemente busca aquellos donde haya largas filas de locales.
+                ¡Buen provecho!</p>
+            <a href="index.html" class="btn-primary" style="margin-top: 2rem;">&larr; Volver al inicio</a>
+        </article>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
